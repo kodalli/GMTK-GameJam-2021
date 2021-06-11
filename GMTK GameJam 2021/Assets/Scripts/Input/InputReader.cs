@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
 
-[CreateAssetMenu(fileName = "InputReader", menuName = "Game/Input Reader")]
+[CreateAssetMenu(fileName = "InputReader", menuName = "Input/Input Reader")]
 public class InputReader : ScriptableObject, GameInput.IGameplayActions {
     // Gameplay
     public event UnityAction<Vector2> MoveEvent;
@@ -32,19 +32,28 @@ public class InputReader : ScriptableObject, GameInput.IGameplayActions {
     #region Gameplay Actions
 
     public void OnMove(InputAction.CallbackContext context) {
-        throw new System.NotImplementedException();
+        MoveEvent?.Invoke(context.ReadValue<Vector2>().normalized);
     }
 
     public void OnAbility(InputAction.CallbackContext context) {
-        throw new System.NotImplementedException();
+        if (AbilityStartedEvent != null && context.phase == InputActionPhase.Started)
+            AbilityStartedEvent.Invoke();
+
+        if (AbilityCancelledEvent != null && context.phase == InputActionPhase.Canceled)
+            AbilityCancelledEvent.Invoke();
     }
 
     public void OnJump(InputAction.CallbackContext context) {
-        throw new System.NotImplementedException();
+        if (JumpEvent != null && context.phase == InputActionPhase.Performed)
+            JumpEvent.Invoke();
+
+        if (JumpCanceledEvent != null && context.phase == InputActionPhase.Canceled)
+            JumpCanceledEvent.Invoke();
     }
 
     public void OnMenu(InputAction.CallbackContext context) {
-        throw new System.NotImplementedException();
+        if (OpenMenuWindow != null && context.phase == InputActionPhase.Started)
+            OpenMenuWindow?.Invoke();
     }
 
     #endregion
