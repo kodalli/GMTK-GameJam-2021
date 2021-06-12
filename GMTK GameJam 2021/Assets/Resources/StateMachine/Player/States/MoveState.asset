@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab6d43f707a4993a724bb156284a778, type: 3}
+  m_Name: MoveState
+  m_EditorClassIdentifier: 
+  playerInputData: {fileID: 11400000, guid: 62adb954297adbf48aba86b3e0b7fad0, type: 2}
+  playerData: {fileID: 11400000, guid: 9c326f3570916f849b1e24c7656ff1ad, type: 2}
