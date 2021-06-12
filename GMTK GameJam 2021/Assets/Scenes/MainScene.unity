@@ -11964,7 +11964,7 @@ MonoBehaviour:
   remainState: {fileID: 11400000, guid: 2831f76adcf360c4aae79c0ca5de7ff2, type: 2}
   Anim: {fileID: 2130539999}
   RB: {fileID: 2130540000}
-  SR: {fileID: 0}
+  SR: {fileID: 2130540002}
   currentVelocity: {x: 0, y: 0}
   isAnimationFinished: 0
   Collider: {fileID: 2130540001}

@@ -12,7 +12,7 @@ public class DriddIdleState : State<Dridd> {
         timeTillIdleEnd = 2f;
         isIdleDone = false;
         playerDetected = false;
-        
+        type.RB.velocity = Vector2.zero;
         type.Flip();
     }
 
