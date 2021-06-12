@@ -1,49 +1,55 @@
 fileFormatVersion: 2
-guid: 56505a2446e50174087f511cf172a875
+guid: c073a0f0428582a45a4fdaaec7d1b1bb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5291123306797403551
-    second: bubbo32x32-Sheet_0
+      213: -2649653053025673635
+    second: bubbo32x32-Sheetv2_0
   - first:
-      213: -5636334947124213620
-    second: bubbo32x32-Sheet_1
+      213: 5307771394798377509
+    second: bubbo32x32-Sheetv2_1
   - first:
-      213: -950104316184869806
-    second: bubbo32x32-Sheet_2
+      213: 6314303359635310898
+    second: bubbo32x32-Sheetv2_2
   - first:
-      213: 1508572088291210946
-    second: bubbo32x32-Sheet_3
+      213: -7837163460304800624
+    second: bubbo32x32-Sheetv2_3
   - first:
-      213: -2661427503813096273
-    second: bubbo32x32-Sheet_4
+      213: 9081895274154856146
+    second: bubbo32x32-Sheetv2_4
   - first:
-      213: 8008141081620055457
-    second: bubbo32x32-Sheet_5
+      213: 447150857101645050
+    second: bubbo32x32-Sheetv2_5
   - first:
-      213: 3210657839015896720
-    second: bubbo32x32-Sheet_6
+      213: -3677981859354287474
+    second: bubbo32x32-Sheetv2_6
   - first:
-      213: -2660904537325400488
-    second: bubbo32x32-Sheet_7
+      213: -3132247362404736935
+    second: bubbo32x32-Sheetv2_7
   - first:
-      213: 343264163463640061
-    second: bubbo32x32-Sheet_8
+      213: 4797145305431876029
+    second: bubbo32x32-Sheetv2_8
   - first:
-      213: -3832281643051875654
-    second: bubbo32x32-Sheet_9
+      213: -3675332961747389543
+    second: bubbo32x32-Sheetv2_9
   - first:
-      213: 5695776272937744508
-    second: bubbo32x32-Sheet_10
+      213: 4291719217175584932
+    second: bubbo32x32-Sheetv2_10
   - first:
-      213: -1808612282226528511
-    second: bubbo32x32-Sheet_11
+      213: -6916660254849406297
+    second: bubbo32x32-Sheetv2_11
   - first:
-      213: 6395563136475439780
-    second: bubbo32x32-Sheet_12
+      213: -2561435837176374777
+    second: bubbo32x32-Sheetv2_12
   - first:
-      213: 3700722844822059729
-    second: bubbo32x32-Sheet_13
+      213: -5113628657396929343
+    second: bubbo32x32-Sheetv2_13
+  - first:
+      213: 3846721575655071332
+    second: bubbo32x32-Sheetv2_14
+  - first:
+      213: -84387815184453146
+    second: bubbo32x32-Sheetv2_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -157,75 +163,54 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bubbo32x32-Sheet_0
+      name: bubbo32x32-Sheetv2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
+        width: 48
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.6647061, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9d037c2d98dd6940800000000000000
-      internalID: 5291123306797403551
+      spriteID: d5e1064369a8a3bd0800000000000000
+      internalID: -2649653053025673635
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubbo32x32-Sheet_1
+      name: bubbo32x32-Sheetv2_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 48
         y: 0
-        width: 32
+        width: 48
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.679239, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c888a896a37b7c1b0800000000000000
-      internalID: -5636334947124213620
+      spriteID: 52adfe736fdf8a940800000000000000
+      internalID: 5307771394798377509
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubbo32x32-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2544c36882d80d2f0800000000000000
-      internalID: -950104316184869806
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bubbo32x32-Sheet_3
+      name: bubbo32x32-Sheetv2_2
       rect:
         serializedVersion: 2
         x: 96
         y: 0
-        width: 32
+        width: 48
         height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -234,19 +219,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c6baa052568fe410800000000000000
-      internalID: 1508572088291210946
+      spriteID: 2394e137379e0a750800000000000000
+      internalID: 6314303359635310898
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubbo32x32-Sheet_4
+      name: bubbo32x32-Sheetv2_3
       rect:
         serializedVersion: 2
-        x: 128
+        x: 144
         y: 0
-        width: 32
+        width: 48
         height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -255,40 +240,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fac04cf39c5b01bd0800000000000000
-      internalID: -2661427503813096273
+      spriteID: 0947cdd1b5dcc3390800000000000000
+      internalID: -7837163460304800624
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubbo32x32-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a50d2182e1a22f60800000000000000
-      internalID: 8008141081620055457
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bubbo32x32-Sheet_6
+      name: bubbo32x32-Sheetv2_4
       rect:
         serializedVersion: 2
         x: 192
         y: 0
-        width: 32
+        width: 48
         height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -297,19 +261,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 096add53b4c8e8c20800000000000000
-      internalID: 3210657839015896720
+      spriteID: 2de8c4742af590e70800000000000000
+      internalID: 9081895274154856146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubbo32x32-Sheet_7
+      name: bubbo32x32-Sheetv2_5
       rect:
         serializedVersion: 2
-        x: 224
+        x: 240
         y: 0
-        width: 32
+        width: 48
         height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -318,40 +282,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85e8e7fdb61921bd0800000000000000
-      internalID: -2660904537325400488
+      spriteID: af41e8ed559943600800000000000000
+      internalID: 447150857101645050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubbo32x32-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: df33f5f10f483c400800000000000000
-      internalID: 343264163463640061
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bubbo32x32-Sheet_9
+      name: bubbo32x32-Sheetv2_6
       rect:
         serializedVersion: 2
         x: 288
         y: 0
-        width: 32
+        width: 48
         height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -360,19 +303,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab284a2662001dac0800000000000000
-      internalID: -3832281643051875654
+      spriteID: e826bd65cfe25fcc0800000000000000
+      internalID: -3677981859354287474
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubbo32x32-Sheet_10
+      name: bubbo32x32-Sheetv2_7
       rect:
         serializedVersion: 2
-        x: 320
+        x: 336
         y: 0
-        width: 32
+        width: 48
         height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -381,40 +324,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c787d8cb7567b0f40800000000000000
-      internalID: 5695776272937744508
+      spriteID: 95026378e950884d0800000000000000
+      internalID: -3132247362404736935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubbo32x32-Sheet_11
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 10faa7536b486e6e0800000000000000
-      internalID: -1808612282226528511
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bubbo32x32-Sheet_12
+      name: bubbo32x32-Sheetv2_8
       rect:
         serializedVersion: 2
         x: 384
         y: 0
-        width: 32
+        width: 48
         height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -423,19 +345,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a2a33899ca91c850800000000000000
-      internalID: 6395563136475439780
+      spriteID: db1233a2d32e29240800000000000000
+      internalID: 4797145305431876029
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubbo32x32-Sheet_13
+      name: bubbo32x32-Sheetv2_9
       rect:
         serializedVersion: 2
-        x: 416
+        x: 432
         y: 0
-        width: 32
+        width: 48
         height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -444,8 +366,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1dabac1f1db9b5330800000000000000
-      internalID: 3700722844822059729
+      spriteID: 99333cfd4289efcc0800000000000000
+      internalID: -3675332961747389543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubbo32x32-Sheetv2_10
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a0e777b3ef3f8b30800000000000000
+      internalID: 4291719217175584932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubbo32x32-Sheetv2_11
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aa63ade4261300a0800000000000000
+      internalID: -6916660254849406297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubbo32x32-Sheetv2_12
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a952a5da3f37cd0800000000000000
+      internalID: -2561435837176374777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubbo32x32-Sheetv2_13
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 0
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cc299a44ddb809b0800000000000000
+      internalID: -5113628657396929343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubbo32x32-Sheetv2_14
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 48
+        height: 32
+      alignment: 9
+      pivot: {x: 0.67, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46e50ca64ec426530800000000000000
+      internalID: 3846721575655071332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubbo32x32-Sheetv2_15
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 48
+        height: 32
+      alignment: 9
+      pivot: {x: 0.67, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e13f8caab134def0800000000000000
+      internalID: -84387815184453146
       vertices: []
       indices: 
       edges: []
