@@ -3,8 +3,8 @@
 public class Hammond : MonoBehaviour {
     
     [Header("State Machine")]
-    [SerializeField] private DriddBaseState currentState;
-    [SerializeField] private DriddBaseState remainState;
+    [SerializeField] private HammondBaseState currentState;
+    [SerializeField] private HammondBaseState remainState;
     
     public Animator Anim { get; set; }
     public Rigidbody2D RB { get; set; }
@@ -22,5 +22,29 @@ public class Hammond : MonoBehaviour {
         Collider = GetComponent<BoxCollider2D>();
 
         FacingDirection = 1;
+    }
+    private void OnEnable() {
+        HammondBaseState.OnStateTransition += TransitionToState;
+    }
+    
+    private void OnDisable() {
+        HammondBaseState.OnStateTransition -= TransitionToState;
+    }
+
+    private void Start() {
+        currentState.OnStateEnter(this);
+    }
+    private void FixedUpdate() {
+        currentState.OnStateUpdate(this);
+        CurrentVelocity = RB.velocity;
+    }
+
+    private void TransitionToState(HammondBaseState nextState) {
+        if (nextState == remainState)
+            return;
+
+        currentState.OnStateExit(this);
+        currentState = nextState;
+        currentState.OnStateEnter(this);
     }
 }
