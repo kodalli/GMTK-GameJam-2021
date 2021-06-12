@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 303e09d3f7676554f947348594b20f79, type: 3}
   m_Name: PlayerInputData
   m_EditorClassIdentifier: 
-  inputReader: {fileID: 0}
+  inputReader: {fileID: 11400000, guid: 2d315c4ebab71b341867e47bfdee9e9a, type: 2}
   movementInput: {x: 0, y: 0}
   jumpInput: 0
+  abilityPressed: 0
+  abilityReleased: 1
