@@ -2,14 +2,14 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "PluggableAI/Player Base State")]
-public class PlayerStateSO : BaseState<Player, PlayerStateSO> {
+public class PlayerBaseState : BaseState<Player, PlayerBaseState> {
     
-    public static event Action<PlayerStateSO> OnStateTransition;
+    public static event Action<PlayerBaseState> OnStateTransition;
 
     public PlayerData playerData;
     public Optional<string> animBoolName;
 
-    public PlayerStateSO(string stateName, State<Player>[] states, Transition<Player, PlayerStateSO>[] transitions,
+    public PlayerBaseState(string stateName, State<Player>[] states, Transition<Player, PlayerBaseState>[] transitions,
         Action<Player> enterStateEvent, Action<Player> exitStateEvent, Action<Player> updateStateEvent, string animBoolName, PlayerData playerData) : base(stateName, states, transitions, enterStateEvent, exitStateEvent,
         updateStateEvent) {
         this.playerData = playerData;

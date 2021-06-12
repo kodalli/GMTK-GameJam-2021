@@ -11,7 +11,7 @@ public interface IStateMachine<in T> {
 
 public abstract class BaseState<T, U> : ScriptableObject, IStateMachine<T> {
     // U is BaseState_SO
-    [SerializeField] public string stateName;
+    [SerializeField] public Optional<string> stateName;
     [SerializeField] protected State<T>[] states;
     [SerializeField] protected Transition<T, U>[] transitions;
 
@@ -21,7 +21,7 @@ public abstract class BaseState<T, U> : ScriptableObject, IStateMachine<T> {
 
     protected BaseState(string stateName, State<T>[] states, Transition<T, U>[] transitions, Action<T> enterStateEvent,
         Action<T> exitStateEvent, Action<T> updateStateEvent) {
-        this.stateName = stateName;
+        this.stateName.Value = stateName;
         this.states = states;
         this.transitions = transitions;
         this.EnterStateEvent = enterStateEvent;
