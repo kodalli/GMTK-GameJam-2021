@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39e62c3aed714c40b2ae06429c621b27, type: 3}
-  m_Name: AttackState
+  m_Script: {fileID: 11500000, guid: 49b507fe16c44dd285240b3051d3829f, type: 3}
+  m_Name: CheckAttackInput
   m_EditorClassIdentifier: 
+  playerInputData: {fileID: 11400000, guid: 62adb954297adbf48aba86b3e0b7fad0, type: 2}

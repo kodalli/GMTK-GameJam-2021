@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3f59c8be26d460cbd77e2a63cbeff9d, type: 3}
-  m_Name: IdleBase
+  m_Name: MoveBase
   m_EditorClassIdentifier: 
   stateName:
     enabled: 0
     value: 
   states:
-  - {fileID: 11400000, guid: 6ecd68fbd88ca104e9aeb74d4b336844, type: 2}
+  - {fileID: 11400000, guid: 0cee326d65fac2743a70138fee423b5d, type: 2}
   transitions:
-  - decision: {fileID: 11400000, guid: 192ab72ab9a83834b8691e2ab37a3467, type: 2}
-    trueState: {fileID: 11400000, guid: 27e46036ddda78a49ab2ca2d0aef575d, type: 2}
+  - decision: {fileID: 11400000, guid: 811486b7341034e4e9ae86316d80d097, type: 2}
+    trueState: {fileID: 11400000, guid: 6f6f24d0939e9f243a4f5cd8ab854152, type: 2}
     falseState: {fileID: 11400000, guid: 2831f76adcf360c4aae79c0ca5de7ff2, type: 2}

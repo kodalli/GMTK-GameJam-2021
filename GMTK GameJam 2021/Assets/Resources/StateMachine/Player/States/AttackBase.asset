@@ -15,9 +15,13 @@ MonoBehaviour:
   stateName:
     enabled: 0
     value: 
-  states: []
-  transitions: []
-  playerData: {fileID: 0}
+  states:
+  - {fileID: 11400000, guid: 1470639973e9148429e1e269b19e979f, type: 2}
+  transitions:
+  - decision: {fileID: 11400000, guid: 395417362755b4947a35ed1d9d2395da, type: 2}
+    trueState: {fileID: 11400000, guid: 94ed5a47acbb8214aa35308484ac5e09, type: 2}
+    falseState: {fileID: 11400000, guid: 9312ca6d4f308d84db735abe451889ef, type: 2}
+  playerData: {fileID: 11400000, guid: 9c326f3570916f849b1e24c7656ff1ad, type: 2}
   animBoolName:
-    enabled: 0
-    value: 
+    enabled: 1
+    value: attack

@@ -62,7 +62,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Attack"",
                     ""type"": ""Button"",
-                    ""id"": ""0ec3d790-9750-437f-916a-f509aed15706"",
+                    ""id"": ""b836ec4c-7357-4d4e-9b06-e5492ce82f35"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -214,7 +214,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""bb9a9011-ef3d-4102-b69c-e525b6912c55"",
+                    ""id"": ""342cef86-563a-4ccb-aadf-1af0e69555c6"",
                     ""path"": ""<Keyboard>/z"",
                     ""interactions"": """",
                     ""processors"": """",

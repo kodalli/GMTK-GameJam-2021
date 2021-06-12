@@ -170,6 +170,8 @@ public static class Helper {
     public static bool Raycast(Vector2 origin, Vector2 direction, float distance, LayerMask layer,
         out RaycastHit2D ray) =>
         ray = Physics2D.Raycast(origin, direction, distance, layer);
+    public static bool Raycast(Vector2 origin, Vector2 direction, float distance, LayerMask layer) =>
+         Physics2D.Raycast(origin, direction, distance, layer);
 
     public static void CallWithDelay(this MonoBehaviour mono, Action method, float delay) {
         mono.StartCoroutine(CallWithDelayRoutine(method, delay));

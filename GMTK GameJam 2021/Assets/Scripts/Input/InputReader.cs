@@ -14,12 +14,12 @@ public class InputReader : ScriptableObject, GameInput.IGameplayActions {
     public event UnityAction AbilityStartedEvent;
     public event UnityAction AbilityCancelledEvent;
 
-    public event UnityAction AttackStarted;
+    public event UnityAction AttackStartedEvent;
+    public event UnityAction AttackCancelledEvent;
 
-    public event UnityAction AttackCancelled;
     public event UnityAction OpenMenuWindow;
 
-    private GameInput GameInput { get; set; }
+    private GameInput GameInput{ get; set; }
 
     private void OnEnable() {
         if (GameInput == null) {
@@ -60,11 +60,11 @@ public class InputReader : ScriptableObject, GameInput.IGameplayActions {
     }
 
     public void OnAttack(InputAction.CallbackContext context) {
-        if (AttackStarted != null && context.phase == InputActionPhase.Started)
-            AttackStarted.Invoke();
+        if (AttackStartedEvent != null && context.phase == InputActionPhase.Started)
+            AttackStartedEvent.Invoke();
 
-        if (AttackCancelled != null && context.phase == InputActionPhase.Canceled)
-            AttackCancelled.Invoke();
+        if (AttackCancelledEvent != null && context.phase == InputActionPhase.Canceled)
+            AttackCancelledEvent.Invoke();
     }
 
     #endregion

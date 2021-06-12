@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39e62c3aed714c40b2ae06429c621b27, type: 3}
-  m_Name: AttackState
+  m_Script: {fileID: 11500000, guid: ba321dad73bb4540b071535f64bc23a2, type: 3}
+  m_Name: CheckAnimationFnished
   m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: 9c326f3570916f849b1e24c7656ff1ad, type: 2}

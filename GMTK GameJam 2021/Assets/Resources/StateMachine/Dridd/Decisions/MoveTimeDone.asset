@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39e62c3aed714c40b2ae06429c621b27, type: 3}
-  m_Name: AttackState
+  m_Script: {fileID: 11500000, guid: 2b7ac2174b3f4b92bb10df3257e2450c, type: 3}
+  m_Name: MoveTimeDone
   m_EditorClassIdentifier: 
+  moveState: {fileID: 11400000, guid: 0cee326d65fac2743a70138fee423b5d, type: 2}

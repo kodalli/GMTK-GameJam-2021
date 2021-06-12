@@ -24,7 +24,7 @@ public class PlayerBaseState : BaseState<Player, PlayerBaseState> {
     }
     
     public void Refresh() => playerData.Reset();
-    protected override void ResetAnimationFinished(Player player) => playerData.isAnimationFinished = false;
+    protected override void ResetAnimationFinished(Player player) => playerData.IsAnimationFinished = false;
     
-    public void AnimationFinishTrigger() => playerData.isAnimationFinished = true;
+    public void AnimationFinishTrigger() => playerData.IsAnimationFinished = true;
 }

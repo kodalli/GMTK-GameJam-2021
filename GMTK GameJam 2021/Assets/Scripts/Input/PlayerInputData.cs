@@ -5,47 +5,22 @@ using UnityEngine;
 public class PlayerInputData : ScriptableObject {
     [SerializeField] private InputReader inputReader = null;
 
-    [Header("Game Input"), Space] [SerializeField]
-    private Vector2 movementInput;
-
+    [Header("Game Input"), Space] 
+    [SerializeField] private Vector2 movementInput;
     [SerializeField] private bool jumpInput;
     [SerializeField] private bool abilityPressed;
     [SerializeField] private bool abilityReleased;
-
-    [SerializeField] private bool attackStarted;
-
+    [SerializeField] private bool attackPressed;
     [SerializeField] private bool attackReleased;
-
+    
     // Properties
-    public Vector2 MovementInput {
-        get => movementInput;
-        set => movementInput = value;
-    }
+    public Vector2 MovementInput { get => movementInput; set => movementInput = value; }
+    public bool JumpInput { get => jumpInput; set => jumpInput = value;}
+    public bool AbilityPressed { get => abilityPressed; set => abilityPressed = value;}
+    public bool AbilityReleased { get => abilityReleased; set => abilityReleased = value;}
+    public bool AttackPressed { get => attackPressed; set => attackPressed  = value; }
+    public bool AttackReleased { get => attackReleased; set => attackReleased  = value; }
 
-    public bool JumpInput {
-        get => jumpInput;
-        set => jumpInput = value;
-    }
-
-    public bool AbilityPressed {
-        get => abilityPressed;
-        set => abilityPressed = value;
-    }
-
-    public bool AbilityReleased {
-        get => abilityReleased;
-        set => abilityReleased = value;
-    }
-
-    public bool AttackStarted {
-        get => attackStarted;
-        set => attackStarted = value;
-    }
-
-    public bool AttackReleased {
-        get => attackReleased;
-        set => attackReleased = value;
-    }
 
     public void RegisterEvents() {
         inputReader.MoveEvent += OnMove;
@@ -53,8 +28,8 @@ public class PlayerInputData : ScriptableObject {
         inputReader.JumpCanceledEvent += OnJumpCanceled;
         inputReader.AbilityStartedEvent += OnAbilityPressed;
         inputReader.AbilityCancelledEvent += OnAbilityReleased;
-        inputReader.AttackStarted += OnAttackPressed;
-        inputReader.AttackCancelled += OnAttackReleased;
+        inputReader.AttackStartedEvent += OnAttackPressed;
+        inputReader.AttackCancelledEvent += OnAttackReleased;
 
         Helper.CustomLog("Player: Input Events Registered", LogColor.Green);
     }
@@ -65,8 +40,8 @@ public class PlayerInputData : ScriptableObject {
         inputReader.JumpCanceledEvent -= OnJumpCanceled;
         inputReader.AbilityStartedEvent -= OnAbilityPressed;
         inputReader.AbilityCancelledEvent -= OnAbilityReleased;
-        inputReader.AttackStarted -= OnAttackPressed;
-        inputReader.AttackCancelled -= OnAttackReleased;
+        inputReader.AttackStartedEvent -= OnAttackPressed;
+        inputReader.AttackCancelledEvent -= OnAttackReleased;
         
         Helper.CustomLog("Player: Input Events Unregistered", LogColor.Green);
     }
@@ -85,14 +60,13 @@ public class PlayerInputData : ScriptableObject {
         abilityPressed = false;
         abilityReleased = true;
     }
-
     private void OnAttackPressed() {
-        attackStarted = true;
+        attackPressed = true;
         attackReleased = false;
     }
 
     private void OnAttackReleased() {
-        attackStarted = false;
+        attackPressed = false;
         attackReleased = true;
     }
 
