@@ -15,6 +15,7 @@ public class PlayerData : ScriptableObject {
     public float movementSpeed = 7f;
     public float jumpSpeed = 40f;
     public int facingDirection;
+    public float attackDamage = 25f;
 
     public void Reset() {
         facingDirection = 1;

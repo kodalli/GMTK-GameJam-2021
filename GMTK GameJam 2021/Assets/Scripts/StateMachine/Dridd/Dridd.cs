@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore;
 
-public class Dridd : MonoBehaviour {
+public class Dridd : MonoBehaviour, IDamageable{
     
     [Header("State Machine")]
     [SerializeField] private DriddBaseState currentState;
@@ -27,10 +27,12 @@ public class Dridd : MonoBehaviour {
     public float movementSpeed;
     public float rayDistance = 1f;
     public float wallCheckDistance = .7f;
+    public float health = 100f;
     
     [Space]
     public LayerMask playerLayer;
     public LayerMask wallLayer;
+    public bool isTakingDamage;
 
     private void Awake() {
         facingDirection = -1;
@@ -78,5 +80,16 @@ public class Dridd : MonoBehaviour {
 
         Gizmos.color = Color.blue;
         Gizmos.DrawLine(bounds.center, bounds.center + (Vector3)(Vector2.right * facingDirection * wallCheckDistance));
+    }
+
+    public void TakeDamage(float damage) {
+        if (health > 0f) {
+            health -= damage;
+            isTakingDamage = true;
+            Debug.Log("current health: " + health.ToString());
+        }
+        else {
+            Destroy(gameObject);
+        }
     }
 }
