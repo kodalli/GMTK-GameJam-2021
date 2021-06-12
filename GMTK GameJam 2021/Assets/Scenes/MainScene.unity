@@ -11962,6 +11962,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: {fileID: 11400000, guid: 6f6f24d0939e9f243a4f5cd8ab854152, type: 2}
   remainState: {fileID: 11400000, guid: 2831f76adcf360c4aae79c0ca5de7ff2, type: 2}
+  Anim: {fileID: 2130539999}
+  RB: {fileID: 2130540000}
+  SR: {fileID: 0}
+  currentVelocity: {x: 0, y: 0}
+  isAnimationFinished: 0
+  Collider: {fileID: 2130540001}
+  movementSpeed: 5
+  rayDistance: 5
+  wallCheckDistance: 2.5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!95 &2130539999
 Animator:
   serializedVersion: 3
@@ -12087,7 +12102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2130539997}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.87, y: 1.2, z: 0}
+  m_LocalPosition: {x: 30.7, y: -0.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

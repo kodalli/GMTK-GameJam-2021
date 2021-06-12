@@ -17,6 +17,6 @@ public class DriddBaseState : BaseState<Dridd, DriddBaseState> {
         }
     }
 
-    protected override void ResetAnimationFinished(Dridd entity) => entity.IsAnimationFinished = false;
-    public void AnimationFinishTrigger(Dridd entity) => entity.IsAnimationFinished = true;
+    protected override void ResetAnimationFinished(Dridd entity) => entity.isAnimationFinished = false;
+    public void AnimationFinishTrigger(Dridd entity) => entity.isAnimationFinished = true;
 }
