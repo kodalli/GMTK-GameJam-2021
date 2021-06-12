@@ -1,44 +1,43 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Player : PlayerPhysics {
     
     [Header("State Machine")] 
-    public PlayerStateSO currentState;
-    public PlayerStateSO remainState;
+    public PlayerBaseState currentBaseState;
+    public PlayerBaseState remainBaseState;
 
     protected override void OnEnable() {
         base.OnEnable();
-        PlayerStateSO.OnStateTransition += TransitionToState;
+        PlayerBaseState.OnStateTransition += TransitionToState;
     }
     
     protected override void OnDisable() {
         base.OnDisable();
-        PlayerStateSO.OnStateTransition -= TransitionToState;
+        PlayerBaseState.OnStateTransition -= TransitionToState;
     }
 
     protected override void Start() {
         base.Start();
-        currentState.Refresh();
-        currentState.OnStateEnter(this);
+        currentBaseState.Refresh();
+        currentBaseState.OnStateEnter(this);
     }
 
     protected override void Update() {
         base.Update();
-        currentState.OnStateUpdate(this);
+        currentBaseState.OnStateUpdate(this);
     }
 
-    private void TransitionToState(PlayerStateSO nextState) {
-        if (nextState == remainState)
+    private void TransitionToState(PlayerBaseState nextBaseState) {
+        if (nextBaseState == remainBaseState)
             return;
 
-        currentState.OnStateExit(this);
-        if (currentState.animBoolName.Enabled) 
-            Anim.SetBool(currentState.animBoolName.Value, false);
-        currentState = nextState;
-        if (currentState.animBoolName.Enabled) 
-            Anim.SetBool(currentState.animBoolName.Value, true);
-        currentState.OnStateEnter(this);
+        currentBaseState.OnStateExit(this);
+        Anim.SetBool(currentBaseState.animBoolName.Value, false);
+        currentBaseState = nextBaseState;
+        Anim.SetBool(currentBaseState.animBoolName.Value, true);
+        currentBaseState.OnStateEnter(this);
     }
 
-    public void AnimationFinishTrigger() => currentState.AnimationFinishTrigger(); // Used as an Animation Event
+    public void AnimationFinishTrigger() => currentBaseState.AnimationFinishTrigger(); // Used as an Animation Event
 }
