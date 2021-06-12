@@ -10,12 +10,22 @@ public class PlayerInputData : ScriptableObject {
     [SerializeField] private bool jumpInput;
     [SerializeField] private bool abilityPressed;
     [SerializeField] private bool abilityReleased;
-
+    [SerializeField] private bool attackPressed;
+    [SerializeField] private bool attackReleased;
+    
     // Properties
     public Vector2 MovementInput { get => movementInput; set => movementInput = value; }
     public bool JumpInput { get => jumpInput; set => jumpInput = value;}
     public bool AbilityPressed { get => abilityPressed; set => abilityPressed = value;}
     public bool AbilityReleased { get => abilityReleased; set => abilityReleased = value;}
+    public bool AttackPressed {
+        get => attackPressed;
+        set => attackPressed  = value;
+    }
+    public bool AttackReleased {
+        get => attackReleased;
+        set => attackReleased  = value;
+    }
 
 
     public void RegisterEvents() {

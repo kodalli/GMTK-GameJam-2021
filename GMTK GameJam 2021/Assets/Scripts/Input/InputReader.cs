@@ -14,6 +14,9 @@ public class InputReader : ScriptableObject, GameInput.IGameplayActions {
     public event UnityAction AbilityStartedEvent;
     public event UnityAction AbilityCancelledEvent;
 
+    public event UnityAction AttackStartedEvent;
+    public event UnityAction AttackCancelledEvent;
+
     public event UnityAction OpenMenuWindow;
 
     private GameInput GameInput{ get; set; }
@@ -54,6 +57,14 @@ public class InputReader : ScriptableObject, GameInput.IGameplayActions {
     public void OnMenu(InputAction.CallbackContext context) {
         if (OpenMenuWindow != null && context.phase == InputActionPhase.Started)
             OpenMenuWindow?.Invoke();
+    }
+
+    public void OnAttack(InputAction.CallbackContext context) {
+        if (AttackStartedEvent != null && context.phase == InputActionPhase.Started)
+            AttackStartedEvent.Invoke();
+
+        if (AttackCancelledEvent != null && context.phase == InputActionPhase.Canceled)
+            AttackCancelledEvent.Invoke();
     }
 
     #endregion
