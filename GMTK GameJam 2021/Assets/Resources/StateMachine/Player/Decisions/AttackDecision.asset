@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6456ed8e1b154c06b4d5ff828a61e893, type: 3}
-  m_Name: New Check Attack Decision
+  m_Name: AttackDecision
   m_EditorClassIdentifier: 
   playerInputData: {fileID: 0}
