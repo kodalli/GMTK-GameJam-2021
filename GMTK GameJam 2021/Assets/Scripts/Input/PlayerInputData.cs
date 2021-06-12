@@ -18,14 +18,8 @@ public class PlayerInputData : ScriptableObject {
     public bool JumpInput { get => jumpInput; set => jumpInput = value;}
     public bool AbilityPressed { get => abilityPressed; set => abilityPressed = value;}
     public bool AbilityReleased { get => abilityReleased; set => abilityReleased = value;}
-    public bool AttackPressed {
-        get => attackPressed;
-        set => attackPressed  = value;
-    }
-    public bool AttackReleased {
-        get => attackReleased;
-        set => attackReleased  = value;
-    }
+    public bool AttackPressed { get => attackPressed; set => attackPressed  = value; }
+    public bool AttackReleased { get => attackReleased; set => attackReleased  = value; }
 
 
     public void RegisterEvents() {
@@ -34,6 +28,8 @@ public class PlayerInputData : ScriptableObject {
         inputReader.JumpCanceledEvent += OnJumpCanceled;
         inputReader.AbilityStartedEvent += OnAbilityPressed;
         inputReader.AbilityCancelledEvent += OnAbilityReleased;
+        inputReader.AttackStartedEvent += OnAttackPressed;
+        inputReader.AttackCancelledEvent += OnAttackReleased;
 
         Helper.CustomLog("Player: Input Events Registered", LogColor.Green);
     }
@@ -44,7 +40,9 @@ public class PlayerInputData : ScriptableObject {
         inputReader.JumpCanceledEvent -= OnJumpCanceled;
         inputReader.AbilityStartedEvent -= OnAbilityPressed;
         inputReader.AbilityCancelledEvent -= OnAbilityReleased;
-
+        inputReader.AttackStartedEvent -= OnAttackPressed;
+        inputReader.AttackCancelledEvent -= OnAttackReleased;
+        
         Helper.CustomLog("Player: Input Events Unregistered", LogColor.Green);
     }
 
@@ -61,6 +59,15 @@ public class PlayerInputData : ScriptableObject {
     private void OnAbilityReleased() {
         abilityPressed = false;
         abilityReleased = true;
+    }
+    private void OnAttackPressed() {
+        attackPressed = true;
+        attackReleased = false;
+    }
+
+    private void OnAttackReleased() {
+        attackPressed = false;
+        attackReleased = true;
     }
 
     public void Reset() {

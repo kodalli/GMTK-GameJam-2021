@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a1a78bb2754a9886e1b766496657b7, type: 3}
   m_Name: IdleBase
   m_EditorClassIdentifier: 
-  stateName: Idle State
+  stateName:
+    enabled: 0
+    value: 
   states:
   - {fileID: 11400000, guid: 7485a509d6b48d4448a9d5a6f5c40f3a, type: 2}
   transitions:
@@ -25,6 +27,9 @@ MonoBehaviour:
   - decision: {fileID: 11400000, guid: 7f798d5ed57c7394c856aa1678af743c, type: 2}
     trueState: {fileID: 11400000, guid: 9312ca6d4f308d84db735abe451889ef, type: 2}
     falseState: {fileID: 11400000, guid: 3c527586c62d26a41b1183987f19b9a1, type: 2}
+  - decision: {fileID: 11400000, guid: 90a90a3bbc1e2d845a089fc7c5be99ac, type: 2}
+    trueState: {fileID: 11400000, guid: 46828db4266f4884890229401f29454a, type: 2}
+    falseState: {fileID: 11400000, guid: 9312ca6d4f308d84db735abe451889ef, type: 2}
   playerData: {fileID: 11400000, guid: 9c326f3570916f849b1e24c7656ff1ad, type: 2}
   animBoolName:
     enabled: 1
