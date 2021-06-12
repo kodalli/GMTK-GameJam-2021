@@ -103,7 +103,7 @@ public abstract class PlayerPhysics : MonoBehaviour {
                 if (projection < 0)
                     velocity -= projection * currentNormal;
                 float modifiedDistance = buffer.distance - ShellRadius;
-                distance = modifiedDistance < distance ? modifiedDistance : distance;
+                distance = Mathf.Min(modifiedDistance, distance);
             }
         }
 

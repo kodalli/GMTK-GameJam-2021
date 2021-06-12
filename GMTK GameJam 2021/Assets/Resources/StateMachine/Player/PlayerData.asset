@@ -16,6 +16,6 @@ MonoBehaviour:
   currentHealth: 50
   currentScore: 100
   isAnimationFinished: 0
-  movementSpeed: 10
+  movementSpeed: 15
   jumpSpeed: 40
   facingDirection: -1
