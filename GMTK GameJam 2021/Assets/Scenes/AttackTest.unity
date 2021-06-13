@@ -808,6 +808,10 @@ PrefabInstance:
       propertyPath: playerLayer.m_Bits
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6978652687347364665, guid: d805f8fcc5e603a4380dd6c57bc198be, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 0b87e9adedbfe7346b1a4677d9cae2bd, type: 2}
     - target: {fileID: 6978652687347364666, guid: d805f8fcc5e603a4380dd6c57bc198be, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -973,7 +977,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330358468}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.517905, y: -1.5105658, z: 0}
+  m_LocalPosition: {x: 5.48, y: -1.5105658, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

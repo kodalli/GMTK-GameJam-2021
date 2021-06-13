@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60ba8889f35b482387e89cbbcba5ef67, type: 3}
   m_Name: MoveDoneDecision
   m_EditorClassIdentifier: 
-  moveState: {fileID: 0}
+  moveState: {fileID: 11400000, guid: 6949615112a2d3245b792be30f8c9639, type: 2}
