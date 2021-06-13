@@ -15,13 +15,13 @@ public class DriddMoveState : State<Dridd> {
     public override void LogicUpdate(Dridd type) {
         type.Anim.Play("dridd_run");
         type.RB.velocity = new Vector2(type.movementSpeed * type.FacingDirection, type.currentVelocity.y);
-        timeLeftInMove -= Time.deltaTime;
 
-        var isDetectingPlayer = type.IsDetectingPlayer();
-        playerDetected = isDetectingPlayer;
+        playerDetected = type.IsDetectingPlayer();
         if (playerDetected) {
-            Debug.Log("player detected");
+            type.RB.velocity = new Vector2((type.movementSpeed*2) * type.FacingDirection, type.currentVelocity.y);
         }
+        
+        timeLeftInMove -= Time.deltaTime;
         
         if (timeLeftInMove < 0.05f) {
             isMovingDone = true;

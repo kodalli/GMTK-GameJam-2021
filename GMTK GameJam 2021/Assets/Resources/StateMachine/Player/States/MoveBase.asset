@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a1a78bb2754a9886e1b766496657b7, type: 3}
   m_Name: MoveBase
   m_EditorClassIdentifier: 
-  stateName: Move State
+  stateName:
+    enabled: 0
+    value: 
   states:
   - {fileID: 11400000, guid: e1abd69cf7f5deb4893cb7af026329b4, type: 2}
   transitions:
@@ -24,6 +26,9 @@ MonoBehaviour:
     falseState: {fileID: 11400000, guid: 3c527586c62d26a41b1183987f19b9a1, type: 2}
   - decision: {fileID: 11400000, guid: 6585dd0ab1f13a345b208aa8b9cb86e9, type: 2}
     trueState: {fileID: 11400000, guid: 3c527586c62d26a41b1183987f19b9a1, type: 2}
+    falseState: {fileID: 11400000, guid: 9312ca6d4f308d84db735abe451889ef, type: 2}
+  - decision: {fileID: 11400000, guid: 6b6cdf26eea038f49852a51a60214cb7, type: 2}
+    trueState: {fileID: 11400000, guid: c7504d054ef3088458f064c32907f430, type: 2}
     falseState: {fileID: 11400000, guid: 9312ca6d4f308d84db735abe451889ef, type: 2}
   playerData: {fileID: 11400000, guid: 9c326f3570916f849b1e24c7656ff1ad, type: 2}
   animBoolName:

@@ -30,6 +30,9 @@ MonoBehaviour:
   - decision: {fileID: 11400000, guid: 90a90a3bbc1e2d845a089fc7c5be99ac, type: 2}
     trueState: {fileID: 11400000, guid: 46828db4266f4884890229401f29454a, type: 2}
     falseState: {fileID: 11400000, guid: 9312ca6d4f308d84db735abe451889ef, type: 2}
+  - decision: {fileID: 11400000, guid: 6b6cdf26eea038f49852a51a60214cb7, type: 2}
+    trueState: {fileID: 11400000, guid: c7504d054ef3088458f064c32907f430, type: 2}
+    falseState: {fileID: 11400000, guid: 9312ca6d4f308d84db735abe451889ef, type: 2}
   playerData: {fileID: 11400000, guid: 9c326f3570916f849b1e24c7656ff1ad, type: 2}
   animBoolName:
     enabled: 1
