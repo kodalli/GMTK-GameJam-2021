@@ -10,18 +10,19 @@ public class Dridd : MonoBehaviour, IDamageable{
     [SerializeField] private DriddBaseState currentState;
     [SerializeField] private DriddBaseState remainState;
 
+    [Space]
     public Animator Anim;
     public Rigidbody2D RB;
     public SpriteRenderer SR;
+    public BoxCollider2D Collider;
     
     private int facingDirection;
     public int FacingDirection => facingDirection;
     
     public Vector2 currentVelocity;
     public bool isAnimationFinished;
+    public bool isTakingDamage;
 
-    [Space]
-    public BoxCollider2D Collider;
 
     [Space] 
     public float movementSpeed;
@@ -31,8 +32,6 @@ public class Dridd : MonoBehaviour, IDamageable{
     
     [Space]
     public LayerMask playerLayer;
-    public LayerMask wallLayer;
-    public bool isTakingDamage;
 
     private void Awake() {
         facingDirection = -1;
@@ -63,14 +62,15 @@ public class Dridd : MonoBehaviour, IDamageable{
         currentState.OnStateEnter(this);
     }
     
-    public bool IsDetectingPlayer() => Physics2D.Raycast(Collider.bounds.center, transform.right * facingDirection, rayDistance, playerLayer);
+    public bool IsDetectingPlayer() => Physics2D.Raycast(Collider.bounds.center, Vector2.right * facingDirection, rayDistance, playerLayer);
     public void AnimationFinishTrigger() => currentState.AnimationFinishTrigger(this); // Used as an Animation Event
 
     public void Flip() {
         facingDirection *= -1;
         transform.Rotate(0f, -180f, 0f);
     }
-    
+
+
     private void OnDrawGizmos() {
         Gizmos.color = Color.black;
         
