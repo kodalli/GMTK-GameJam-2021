@@ -6,22 +6,23 @@ public class Hammond : MonoBehaviour {
     [SerializeField] private HammondBaseState currentState;
     [SerializeField] private HammondBaseState remainState;
     
-    public Animator Anim { get; set; }
-    public Rigidbody2D RB { get; set; }
-    public SpriteRenderer SR { get; set; }
-    public BoxCollider2D Collider { get; set; }
+    [Header("Components")]
+    public Animator anim; 
+    public Rigidbody2D rb; 
+    public SpriteRenderer sr; 
+    public new BoxCollider2D collider;
 
-    public int FacingDirection { get; set; }
-    public Vector2 CurrentVelocity { get; set; }
-    public bool IsAnimationFinished { get; set; }
+    [HideInInspector] public int facingDirection;
+    [HideInInspector] public Vector2 currentVelocity;
+    [HideInInspector] public bool isAnimationFinished;
+    
+    [Header("Enemy Info")]
+    public float movementSpeed;
+    public float rayDistance;
+    public LayerMask playerLayer;
     
     private void Awake() {
-        RB = GetComponent<Rigidbody2D>();
-        Anim = GetComponent<Animator>();
-        SR = GetComponent<SpriteRenderer>();
-        Collider = GetComponent<BoxCollider2D>();
-
-        FacingDirection = 1;
+        facingDirection = -1;
     }
     private void OnEnable() {
         HammondBaseState.OnStateTransition += TransitionToState;
@@ -36,7 +37,7 @@ public class Hammond : MonoBehaviour {
     }
     private void FixedUpdate() {
         currentState.OnStateUpdate(this);
-        CurrentVelocity = RB.velocity;
+        currentVelocity = rb.velocity;
     }
 
     private void TransitionToState(HammondBaseState nextState) {
@@ -46,5 +47,17 @@ public class Hammond : MonoBehaviour {
         currentState.OnStateExit(this);
         currentState = nextState;
         currentState.OnStateEnter(this);
+    }
+    public bool IsDetectingPlayer() => Physics2D.Raycast(collider.bounds.center, Vector2.right * facingDirection, rayDistance, playerLayer);
+    public void Flip() {
+        facingDirection *= -1;
+        transform.Rotate(0f, -180f, 0f);
+    }
+    private void OnDrawGizmos() {
+        Gizmos.color = Color.black;
+        
+        var bounds = collider.bounds;
+        Gizmos.DrawWireSphere(bounds.center, 0.5f);
+        Gizmos.DrawLine(bounds.center, bounds.center + (Vector3)(Vector2.right * facingDirection * rayDistance));
     }
 }

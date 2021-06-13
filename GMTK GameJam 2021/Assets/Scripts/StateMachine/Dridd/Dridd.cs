@@ -79,8 +79,7 @@ public class Dridd : MonoBehaviour, IDamageable{
             Destroy(gameObject);
         }
     }
-
-
+    
     private void OnDrawGizmos() {
         Gizmos.color = Color.black;
         
