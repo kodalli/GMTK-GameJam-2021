@@ -19,6 +19,7 @@ public class PlayerData : ScriptableObject {
 
     public bool damaged;
     public void Reset() {
+        damaged = false;
         isAnimationFinished = false;
         currentHealth = 50;
         facingDirection = 1;
