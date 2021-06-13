@@ -8,6 +8,10 @@ public class KnifeTrigger : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         if (other == null)
             return;
-        other.gameObject.GetComponent<IDamageable>()?.TakeDamage(playerData.attackDamage);
+        var racIndex = other.gameObject.GetComponent<IDamageable>()?.TakeDamage(playerData.attackDamage) ?? -1;
+        if (racIndex > 0) {
+            var player = GetComponentInParent<Player>();
+            player.ChangeAnimationController(racIndex);
+        } 
     }
 }

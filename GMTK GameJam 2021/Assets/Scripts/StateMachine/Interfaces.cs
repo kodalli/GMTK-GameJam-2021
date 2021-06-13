@@ -1,5 +1,5 @@
 ﻿public interface IDamageable {
-    void TakeDamage(float damage);
+    int TakeDamage(float damage);
 }
 
 // public interface ISpecial {
