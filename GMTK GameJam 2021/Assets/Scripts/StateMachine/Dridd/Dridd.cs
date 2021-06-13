@@ -86,7 +86,7 @@ public class Dridd : MonoBehaviour, IDamageable{
         if (health > 0f) {
             health -= damage;
             isTakingDamage = true;
-            Debug.Log("current health: " + health.ToString());
+            Debug.Log("current health: " + health);
             return -1;
         }
         else {
