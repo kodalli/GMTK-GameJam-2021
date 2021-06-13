@@ -5,30 +5,23 @@ public class Hammond : MonoBehaviour, IDamageable {
     private HammondBaseState currentState;
 
     [SerializeField] private HammondBaseState remainState;
+    
+    [Header("Components")]
+    public Animator anim; 
+    public Rigidbody2D rb; 
+    public SpriteRenderer sr; 
+    public new BoxCollider2D collider;
 
-    [Space] public Animator Anim;
-    public Rigidbody2D RB;
-    public SpriteRenderer SR;
-    public BoxCollider2D Collider;
-
-    private int facingDirection;
-    public int FacingDirection => facingDirection;
-    public Vector2 CurrentVelocity;
-    public bool IsAnimationFinished;
-
-    [Space] public float movementSpeed;
-    public float rayDistance = 1f;
-    public float wallCheckDistance = .7f;
-    public float health = 100f;
-
-    [Space] public LayerMask playerLayer;
-
+    [HideInInspector] public int facingDirection;
+    [HideInInspector] public Vector2 currentVelocity;
+    [HideInInspector] public bool isAnimationFinished;
+    
+    [Header("Enemy Info")]
+    public float movementSpeed;
+    public float rayDistance;
+    public LayerMask playerLayer;
+    
     private void Awake() {
-        RB = GetComponent<Rigidbody2D>();
-        Anim = GetComponent<Animator>();
-        SR = GetComponent<SpriteRenderer>();
-        Collider = GetComponent<BoxCollider2D>();
-
         facingDirection = -1;
     }
 
@@ -46,7 +39,7 @@ public class Hammond : MonoBehaviour, IDamageable {
 
     private void FixedUpdate() {
         currentState.OnStateUpdate(this);
-        CurrentVelocity = RB.velocity;
+        currentVelocity = rb.velocity;
     }
 
     private void TransitionToState(HammondBaseState nextState) {
@@ -58,27 +51,13 @@ public class Hammond : MonoBehaviour, IDamageable {
         currentState.OnStateEnter(this);
     }
 
-    public bool IsDetectingPlayer() => Physics2D.Raycast(Collider.bounds.center, Vector2.right * facingDirection,
-        rayDistance, playerLayer);
-
     public void AnimationFinishTrigger() => currentState.AnimationFinishTrigger(this); // Used as an Animation Event
 
+    public bool IsDetectingPlayer() => Physics2D.Raycast(collider.bounds.center, Vector2.right * facingDirection, rayDistance, playerLayer);
     public void Flip() {
         facingDirection *= -1;
         transform.Rotate(0f, -180f, 0f);
     }
-
-    private void OnDrawGizmos() {
-        Gizmos.color = Color.black;
-
-        var bounds = Collider.bounds;
-        Gizmos.DrawWireSphere(bounds.center, 0.5f);
-        Gizmos.DrawLine(bounds.center, bounds.center + (Vector3) (Vector2.right * facingDirection * rayDistance));
-
-        Gizmos.color = Color.blue;
-        Gizmos.DrawLine(bounds.center, bounds.center + (Vector3) (Vector2.right * facingDirection * wallCheckDistance));
-    }
-
     public int TakeDamage(float damage) {
         if (health > 0f) {
             health -= damage;
@@ -90,5 +69,11 @@ public class Hammond : MonoBehaviour, IDamageable {
             Destroy(gameObject, 0.1f);
             return 2; // hammond is 2 index for animation override controller in Player class
         }
+    private void OnDrawGizmos() {
+        Gizmos.color = Color.black;
+        
+        var bounds = collider.bounds;
+        Gizmos.DrawWireSphere(bounds.center, 0.5f);
+        Gizmos.DrawLine(bounds.center, bounds.center + (Vector3)(Vector2.right * facingDirection * rayDistance));
     }
 }

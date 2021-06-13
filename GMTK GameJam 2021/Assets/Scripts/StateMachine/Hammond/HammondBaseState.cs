@@ -11,8 +11,8 @@ public class HammondBaseState : BaseState<Hammond, HammondBaseState> {
             OnStateTransition?.Invoke(decisionSucceeded ? transitions[i].trueState : transitions[i].falseState);
         }
     }
-    protected override void ResetAnimationFinished(Hammond entity) => entity.IsAnimationFinished = false;
-    public void AnimationFinishTrigger(Hammond entity) => entity.IsAnimationFinished = true;
+    protected override void ResetAnimationFinished(Hammond entity) => entity.isAnimationFinished = false;
+    public void AnimationFinishTrigger(Hammond entity) => entity.isAnimationFinished = true;
 }
 
 
