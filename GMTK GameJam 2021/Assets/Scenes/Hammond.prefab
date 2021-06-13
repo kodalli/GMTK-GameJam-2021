@@ -166,3 +166,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: {fileID: 11400000, guid: fdd2c7832d9567a48ad8e33c95845e7d, type: 2}
   remainState: {fileID: 11400000, guid: 87d19717c872f3f47843d8b63c9632b4, type: 2}
+  anim: {fileID: 6978652687347364664}
+  rb: {fileID: 6978652687347364670}
+  sr: {fileID: 6978652687347364667}
+  collider: {fileID: 6978652687347364665}
+  facingDirection: 0
+  currentVelocity: {x: 0, y: 0}
+  isAnimationFinished: 0
+  movementSpeed: 5
+  rayDistance: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  health: 100
