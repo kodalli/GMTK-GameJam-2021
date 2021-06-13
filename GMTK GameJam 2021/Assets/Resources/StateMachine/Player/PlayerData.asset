@@ -17,6 +17,7 @@ MonoBehaviour:
   currentScore: 100
   isAnimationFinished: 0
   movementSpeed: 10
-  jumpSpeed: 27
+  jumpSpeed: 30
   facingDirection: -1
   attackDamage: 25
+  damaged: 0
