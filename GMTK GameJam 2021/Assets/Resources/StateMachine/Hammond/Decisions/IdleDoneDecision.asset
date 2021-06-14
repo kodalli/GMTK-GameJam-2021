@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10c87ceb330a4cdaa04d712a396bf962, type: 3}
   m_Name: IdleDoneDecision
   m_EditorClassIdentifier: 
-  idleState: {fileID: 0}
+  idleState: {fileID: 11400000, guid: 373ebb13877d4f549909d0e209c7ad23, type: 2}

@@ -15,5 +15,9 @@ MonoBehaviour:
   stateName:
     enabled: 0
     value: 
-  states: []
-  transitions: []
+  states:
+  - {fileID: 11400000, guid: 373ebb13877d4f549909d0e209c7ad23, type: 2}
+  transitions:
+  - decision: {fileID: 11400000, guid: b544f929dec0d774bb7fa38caa3284bc, type: 2}
+    trueState: {fileID: 11400000, guid: b25dcc452ac2da34f8503003a360444b, type: 2}
+    falseState: {fileID: 11400000, guid: 87d19717c872f3f47843d8b63c9632b4, type: 2}

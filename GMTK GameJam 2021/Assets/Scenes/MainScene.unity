@@ -329,7 +329,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!50 &966857747
 Rigidbody2D:
   serializedVersion: 4
@@ -475,6 +475,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: {fileID: 11400000, guid: fdd2c7832d9567a48ad8e33c95845e7d, type: 2}
   remainState: {fileID: 11400000, guid: 87d19717c872f3f47843d8b63c9632b4, type: 2}
+  anim: {fileID: 966857749}
+  rb: {fileID: 966857747}
+  sr: {fileID: 966857750}
+  collider: {fileID: 966857748}
+  facingDirection: 0
+  currentVelocity: {x: 0, y: 0}
+  isAnimationFinished: 0
+  movementSpeed: 6
+  rayDistance: 5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &1018651884
 GameObject:
   m_ObjectHideFlags: 0
@@ -11907,7 +11919,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2130539998
 MonoBehaviour:
   m_ObjectHideFlags: 0
