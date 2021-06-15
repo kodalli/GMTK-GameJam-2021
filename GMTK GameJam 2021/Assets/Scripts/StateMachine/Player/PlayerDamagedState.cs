@@ -4,7 +4,6 @@
 public class PlayerDamagedState : State<Player> {
     [SerializeField] private PlayerData playerData;
     public override void OnEnter(Player type) {
-        playerData.damaged = false;
     }
 
     public override void LogicUpdate(Player type) {
@@ -12,6 +11,7 @@ public class PlayerDamagedState : State<Player> {
 
     public override void OnExit(Player type) {
         type.RB.velocity = Vector2.zero;
+        playerData.damaged = false;
     }
     
 }
