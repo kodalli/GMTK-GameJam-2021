@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.Serialization;
 
 public class Player : PlayerPhysics {
-    
     [Header("State Machine")] 
     public PlayerBaseState currentBaseState;
     public PlayerBaseState remainBaseState;
     // 0,1,2,3 -> base, dridd, hammond, poof
     public RuntimeAnimatorController[] animationControllers;
+    public string ActiveController => Anim.runtimeAnimatorController.name;
 
     [Header("Data")] 
     [SerializeField] private PlayerData playerData;
