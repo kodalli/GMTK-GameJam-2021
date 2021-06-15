@@ -7,13 +7,13 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "InputReader", menuName = "Input/Input Reader")]
 public class InputReader : ScriptableObject, GameInput.IGameplayActions {
     // Gameplay
+    public event UnityAction SpecialCancelledEvent;
+    public event UnityAction SpecialStartedEvent;
     public event UnityAction<Vector2> MoveEvent;
     public event UnityAction JumpEvent;
     public event UnityAction JumpCanceledEvent;
-
     public event UnityAction AbilityStartedEvent;
     public event UnityAction AbilityCancelledEvent;
-
     public event UnityAction AttackStartedEvent;
     public event UnityAction AttackCancelledEvent;
 
@@ -67,6 +67,13 @@ public class InputReader : ScriptableObject, GameInput.IGameplayActions {
             AttackCancelledEvent.Invoke();
     }
 
+    public void OnSpecial(InputAction.CallbackContext context) {
+        if (SpecialStartedEvent != null && context.phase == InputActionPhase.Started)
+            SpecialStartedEvent.Invoke();
+
+        if (SpecialCancelledEvent != null && context.phase == InputActionPhase.Canceled)
+            SpecialCancelledEvent.Invoke();
+    }
     #endregion
 
     public void EnableGameplayInput() {
