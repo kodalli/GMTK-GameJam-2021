@@ -4,10 +4,6 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-[CreateAssetMenu(fileName = "PlayerTest", menuName = "Script/GenerateScript")]
-public class PlayerTest : MonoBehaviour {
-    
-}
 public class Player : PlayerPhysics {
     [Header("State Machine")] public PlayerBaseState currentBaseState;
 
@@ -35,14 +31,6 @@ public class Player : PlayerPhysics {
     protected override void Start() {
         base.Start();
         currentBaseState.OnStateEnter(this);
-    }
-    [ContextMenu("GenerateScript")]
-    public void GenerateScript() {
-        // AssetDatabase.LoadAssetAtPath($"Assets/Resources/PlayerTest.cs", typeof(Player));
-        Debug.Log("generating script");
-        var thing = ObjectFactory.CreateInstance<Player>();
-        AssetDatabase.CreateAsset(thing, "Assets/Resources/PlayerTest.cs");
-        AssetDatabase.SaveAssets(); 
     }
 
     protected override void Update() {
