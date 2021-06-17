@@ -10,6 +10,7 @@ public class PlayerData : ScriptableObject {
     [Header("Animation")]
     [SerializeField] private bool isAnimationFinished;
     public bool IsAnimationFinished { get => isAnimationFinished; set => isAnimationFinished = value; }
+    public string activeController;
 
     [Header("Move State Settings")] 
     public float movementSpeed = 7f;
@@ -18,10 +19,14 @@ public class PlayerData : ScriptableObject {
     public float attackDamage = 25f;
 
     public bool damaged;
+    public float rayDistance = 4f;
+    public LayerMask interactableLayer;
+
     public void Reset() {
         damaged = false;
         isAnimationFinished = false;
         currentHealth = 50;
         facingDirection = 1;
+        activeController = default;
     }
 }

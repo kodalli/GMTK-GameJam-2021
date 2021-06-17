@@ -14,6 +14,8 @@ public class Player : PlayerPhysics {
     public string ActiveController => Anim.runtimeAnimatorController.name;
 
     [Header("Data")] [SerializeField] private PlayerData playerData;
+
+    [Space, Header("Interaction Logic"), SerializeField] private InteractionLogic interactionLogic;
     private void Awake() {
         currentBaseState.Refresh();
     }
@@ -36,6 +38,8 @@ public class Player : PlayerPhysics {
     protected override void Update() {
         base.Update();
         currentBaseState.OnStateUpdate(this);
+        interactionLogic.UpdateInteractable(this, collider.bounds.center);
+        playerData.activeController = ActiveController;
     }
 
     private void TransitionToState(PlayerBaseState nextBaseState) {

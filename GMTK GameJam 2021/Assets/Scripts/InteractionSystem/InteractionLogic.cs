@@ -1,17 +1,19 @@
-﻿using MainGame.Utils;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "InteractionLogic", menuName = "InteractionSystem/InteractionLogic", order = 0)]
 public class InteractionLogic : ScriptableObject {
+    [SerializeField] private Optional<float> useRequiredDistance;
     [SerializeField] private PlayerData playerData;
     [SerializeField] private InteractionInputData interactionInputData;
     [SerializeField] private InteractionData interactionData;
+    [SerializeField] private PlayerInputData playerInputData;
 
     private InteractableBase interactable;
 
     public void UpdateInteractable(Player player, Vector3 center) {
         CheckForInteractable(player, center);
         CheckForInteractableInput(player);
+        CheckForSpecialInteraction(player);
     }
 
     private void CheckForInteractable(Player player, Vector3 center) {
@@ -41,11 +43,12 @@ public class InteractionLogic : ScriptableObject {
 
     private void CheckForInteractableInput(Player player) {
         if (interactionData.IsEmpty() || !interactionInputData.isInteracting ||
-            !interactionData.Interactable.IsInteractable) return;
+            !interactionData.Interactable.IsInteractable ||
+            interactionData.Interactable.IsSpecialInteraction) return;
 
         var distanceBetweenInteractable = interactable.transform.position.x - player.transform.position.x;
         Debug.Log(distanceBetweenInteractable);
-        if (distanceBetweenInteractable >= interactable.RequiredDistance) return;
+        if (distanceBetweenInteractable >= interactable.RequiredDistance && useRequiredDistance.Enabled) return;
 
         if (interactionData.Interactable.HoldInteract) {
             interactionInputData.holdTimer += Time.deltaTime;
@@ -55,7 +58,26 @@ public class InteractionLogic : ScriptableObject {
         }
         else {
             interactionData.Interact();
+            // Debug.Log("called Interact()");
             interactionInputData.isInteracting = false;
+        }
+    }
+
+    private void CheckForSpecialInteraction(Player player) {
+        if (player.ActiveController == "bubbo_controller") return;
+        if (interactionData.IsEmpty() || !playerInputData.isUsingSpecial ||
+            !interactionData.Interactable.IsInteractable) return;
+        if (!interactionData.Interactable.IsSpecialInteraction) return;
+        // dridd
+        if (interactionData.Interactable.HoldInteract) {
+            playerInputData.holdTimer += Time.deltaTime;
+            if (!(playerInputData.holdTimer >= interactionData.Interactable.HoldDuration)) return;
+            interactionData.Interact();
+            playerInputData.isUsingSpecial = false;
+        }
+        else {
+            interactionData.Interact();
+            playerInputData.isUsingSpecial = false;
         }
     }
 }

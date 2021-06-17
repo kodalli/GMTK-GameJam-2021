@@ -7,6 +7,8 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "InputReader", menuName = "Input/Input Reader")]
 public class InputReader : ScriptableObject, GameInput.IGameplayActions {
     // Gameplay
+    public event UnityAction InteractionCancelledEvent;
+    public event UnityAction InteractionStartedEvent;
     public event UnityAction SpecialCancelledEvent;
     public event UnityAction SpecialStartedEvent;
     public event UnityAction<Vector2> MoveEvent;
@@ -73,6 +75,14 @@ public class InputReader : ScriptableObject, GameInput.IGameplayActions {
 
         if (SpecialCancelledEvent != null && context.phase == InputActionPhase.Canceled)
             SpecialCancelledEvent.Invoke();
+    }
+    
+    public void OnInteract(InputAction.CallbackContext context) {
+        if (InteractionStartedEvent != null && context.phase == InputActionPhase.Started)
+            InteractionStartedEvent.Invoke();
+
+        if (InteractionCancelledEvent != null && context.phase == InputActionPhase.Canceled)
+            InteractionCancelledEvent.Invoke();
     }
     #endregion
 

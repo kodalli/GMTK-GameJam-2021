@@ -74,6 +74,14 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""7184dbc1-c9d2-47cd-b15f-edd21898c059"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -296,6 +304,17 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                     ""action"": ""Special"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6927de73-3ba0-41ac-bbd8-a5fe99101b51"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardOrGamepad"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -327,6 +346,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         m_Gameplay_Menu = m_Gameplay.FindAction("Menu", throwIfNotFound: true);
         m_Gameplay_Attack = m_Gameplay.FindAction("Attack", throwIfNotFound: true);
         m_Gameplay_Special = m_Gameplay.FindAction("Special", throwIfNotFound: true);
+        m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -392,6 +412,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Menu;
     private readonly InputAction m_Gameplay_Attack;
     private readonly InputAction m_Gameplay_Special;
+    private readonly InputAction m_Gameplay_Interact;
     public struct GameplayActions
     {
         private @GameInput m_Wrapper;
@@ -402,6 +423,7 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         public InputAction @Menu => m_Wrapper.m_Gameplay_Menu;
         public InputAction @Attack => m_Wrapper.m_Gameplay_Attack;
         public InputAction @Special => m_Wrapper.m_Gameplay_Special;
+        public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -429,6 +451,9 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                 @Special.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSpecial;
                 @Special.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSpecial;
                 @Special.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSpecial;
+                @Interact.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnInteract;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -451,6 +476,9 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
                 @Special.started += instance.OnSpecial;
                 @Special.performed += instance.OnSpecial;
                 @Special.canceled += instance.OnSpecial;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
             }
         }
     }
@@ -472,5 +500,6 @@ public partial class @GameInput : IInputActionCollection2, IDisposable
         void OnMenu(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnSpecial(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }

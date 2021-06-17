@@ -1,4 +1,5 @@
 ﻿using System.Net.NetworkInformation;
+using UnityEditor;
 using UnityEngine;
 
 public interface IInteractable {
@@ -11,9 +12,10 @@ public interface IInteractable {
 }
 
 public class InteractableBase : MonoBehaviour, IInteractable {
-    [Header("Interactable Settings")] [SerializeField]
+    [Header("Interactable Settings"), Tooltip("Make very big if not work"), SerializeField]
     private float requiredDistance;
 
+    [Space, SerializeField] private bool isSpecialInteraction;
     [Space, SerializeField] private float holdDuration;
     [SerializeField] private bool holdInteract;
     [SerializeField] private bool multipleUse;
@@ -24,8 +26,9 @@ public class InteractableBase : MonoBehaviour, IInteractable {
     public bool HoldInteract => holdInteract;
     public bool MultipleUse => multipleUse;
     public bool IsInteractable => isInteractable;
+    public bool IsSpecialInteraction => isSpecialInteraction;
 
     public virtual void OnInteract() {
-        Debug.Log("INTERACTED: " + gameObject.name);
+        Helper.CustomLog("INTERACTED: " + gameObject.name, LogColor.Blue);
     }
 }

@@ -15,6 +15,8 @@ public class PlayerInputData : ScriptableObject {
     [SerializeField] private bool attackReleased;
     [SerializeField] private bool specialPressed;
     [SerializeField] private bool specialReleased;
+    public bool isUsingSpecial;
+    public float holdTimer;
 
     // Properties
     public Vector2 MovementInput {
@@ -112,11 +114,15 @@ public class PlayerInputData : ScriptableObject {
     private void OnSpecialPressed() {
         specialPressed = true;
         specialReleased = false;
+        isUsingSpecial = true;
+        holdTimer = 0f;
     }
 
     private void OnSpecialReleased() {
         specialPressed = false;
         specialReleased = true;
+        isUsingSpecial = false;
+        holdTimer = 0f;
     }
 
     public void Reset() {
