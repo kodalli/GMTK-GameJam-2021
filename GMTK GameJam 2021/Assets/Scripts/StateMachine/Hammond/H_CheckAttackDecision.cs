@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 namespace StateMachine.Hammond {
-    [CreateAssetMenu(fileName = "FILENAME", menuName = "MENUNAME", order = 0)]
+    [CreateAssetMenu(fileName = "PluggableAI/Decisions/Hammond/CheckAttackFinishedDecision")]
     public class H_CheckAttackDecision : ScriptableObject {
         
     }
