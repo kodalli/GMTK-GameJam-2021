@@ -16,8 +16,13 @@ MonoBehaviour:
   currentHealth: 50
   currentScore: 100
   isAnimationFinished: 0
+  activeController: 
   movementSpeed: 10
   jumpSpeed: 30
-  facingDirection: -1
+  facingDirection: 1
   attackDamage: 25
   damaged: 0
+  rayDistance: 2
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 128

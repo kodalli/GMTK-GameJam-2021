@@ -885,7 +885,8 @@ GameObject:
   - component: {fileID: 1330358471}
   - component: {fileID: 1330358470}
   - component: {fileID: 1330358469}
-  m_Layer: 0
+  - component: {fileID: 1330358472}
+  m_Layer: 7
   m_Name: crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -983,6 +984,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1330358472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330358468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c445d194e43b468c99d610f68663c2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredDistance: 10
+  isSpecialInteraction: 1
+  holdDuration: 0
+  holdInteract: 0
+  multipleUse: 0
+  isInteractable: 1
+  playerData: {fileID: 11400000, guid: 9c326f3570916f849b1e24c7656ff1ad, type: 2}
 --- !u!1 &1484817362
 GameObject:
   m_ObjectHideFlags: 0
@@ -10780,6 +10800,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3491749786119672749, guid: ce52596b91723d04e85c332d0b21e3bc, type: 3}
+      propertyPath: interactionLogic
+      value: 
+      objectReference: {fileID: 11400000, guid: e92eb679f1d1b0a48ab978543cdef7b6, type: 2}
     - target: {fileID: 3491749786119672750, guid: ce52596b91723d04e85c332d0b21e3bc, type: 3}
       propertyPath: m_Name
       value: Player

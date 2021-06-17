@@ -21,6 +21,9 @@ MonoBehaviour:
   - decision: {fileID: 11400000, guid: 395417362755b4947a35ed1d9d2395da, type: 2}
     trueState: {fileID: 11400000, guid: 94ed5a47acbb8214aa35308484ac5e09, type: 2}
     falseState: {fileID: 11400000, guid: 9312ca6d4f308d84db735abe451889ef, type: 2}
+  - decision: {fileID: 11400000, guid: 7f798d5ed57c7394c856aa1678af743c, type: 2}
+    trueState: {fileID: 11400000, guid: 94ed5a47acbb8214aa35308484ac5e09, type: 2}
+    falseState: {fileID: 11400000, guid: 9312ca6d4f308d84db735abe451889ef, type: 2}
   playerData: {fileID: 11400000, guid: 9c326f3570916f849b1e24c7656ff1ad, type: 2}
   animBoolName:
     enabled: 1
