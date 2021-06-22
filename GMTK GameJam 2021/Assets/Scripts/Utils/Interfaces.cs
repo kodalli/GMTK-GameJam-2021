@@ -1,5 +1,5 @@
 ﻿public interface IDamageable {
-    int TakeDamage(float damage);
+    Player.AnimationControllerType TakeDamage(float damage);
 }
 
 // public interface ISpecial {

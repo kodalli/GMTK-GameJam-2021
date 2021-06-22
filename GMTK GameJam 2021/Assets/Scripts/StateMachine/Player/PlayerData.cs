@@ -10,7 +10,7 @@ public class PlayerData : ScriptableObject {
     [Header("Animation")]
     [SerializeField] private bool isAnimationFinished;
     public bool IsAnimationFinished { get => isAnimationFinished; set => isAnimationFinished = value; }
-    public string activeController;
+    public Player.AnimationControllerType activeController;
 
     [Header("Move State Settings")] 
     public float movementSpeed = 7f;

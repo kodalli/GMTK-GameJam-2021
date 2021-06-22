@@ -6,12 +6,11 @@ using UnityEngine;
 public class KnifeTrigger : MonoBehaviour {
     [SerializeField] private PlayerData playerData;
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other == null)
-            return;
-        var racIndex = other.gameObject.GetComponent<IDamageable>()?.TakeDamage(playerData.attackDamage) ?? -1;
-        if (racIndex > 0) {
-            var player = GetComponentInParent<Player>();
-            player.ChangeAnimationController(racIndex);
-        } 
+        if (other == null) return;
+        var animControllerToChangeTo = other.gameObject.GetComponent<IDamageable>()?.TakeDamage(playerData.attackDamage) ?? Player.AnimationControllerType.Default;
+        // Beware if some damageable causes the player to switch from another animation controller back to default this won't work 
+        if (animControllerToChangeTo == Player.AnimationControllerType.Default) return;
+        var player = GetComponentInParent<Player>();
+        player.ChangeAnimationController(animControllerToChangeTo);
     }
 }

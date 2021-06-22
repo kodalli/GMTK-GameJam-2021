@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -9,20 +10,43 @@ public class Player : PlayerPhysics {
 
     public PlayerBaseState remainBaseState;
 
-    // 0,1,2,3 -> base, dridd, hammond, poof
-    public RuntimeAnimatorController[] animationControllers;
-    public string ActiveController => Anim.runtimeAnimatorController.name;
+    public List<AnimController> animationControllers;
+
+    public AnimationControllerType activeController = default;
+
+    private readonly Dictionary<AnimationControllerType, RuntimeAnimatorController> animationsControllerDict =
+        new Dictionary<AnimationControllerType, RuntimeAnimatorController>();
 
     [Header("Data")] [SerializeField] private PlayerData playerData;
 
-    [Space, Header("Interaction Logic"), SerializeField] private InteractionLogic interactionLogic;
+    [Space, Header("Interaction Logic"), SerializeField]
+    private InteractionLogic interactionLogic;
+
+    public enum AnimationControllerType {
+        Default,
+        Dridd,
+        Hammond,
+        Poof,
+    }
+
+    [System.Serializable]
+    public struct AnimController {
+        public AnimationControllerType type;
+        public RuntimeAnimatorController controller;
+    }
+
     private void Awake() {
         currentBaseState.Refresh();
+
+        foreach (var ac in animationControllers) {
+            animationsControllerDict.Add(ac.type, ac.controller);
+        }
     }
 
     protected override void OnEnable() {
         base.OnEnable();
         PlayerBaseState.OnStateTransition += TransitionToState;
+        Anim.runtimeAnimatorController = animationsControllerDict[activeController];
     }
 
     protected override void OnDisable() {
@@ -39,7 +63,7 @@ public class Player : PlayerPhysics {
         base.Update();
         currentBaseState.OnStateUpdate(this);
         interactionLogic.UpdateInteractable(this, collider.bounds.center);
-        playerData.activeController = ActiveController;
+        playerData.activeController = activeController;
     }
 
     private void TransitionToState(PlayerBaseState nextBaseState) {
@@ -53,10 +77,9 @@ public class Player : PlayerPhysics {
         currentBaseState.OnStateEnter(this);
     }
 
-    public void ChangeAnimationController(int index) {
-        if (index < 0 || index > animationControllers.Length - 1)
-            return;
-        Anim.runtimeAnimatorController = animationControllers[index];
+    public void ChangeAnimationController(AnimationControllerType type) {
+        Anim.runtimeAnimatorController = animationsControllerDict[type];
+        activeController = type;
     }
 
     public void AnimationFinishTrigger() => currentBaseState.AnimationFinishTrigger(); // Used as an Animation Event

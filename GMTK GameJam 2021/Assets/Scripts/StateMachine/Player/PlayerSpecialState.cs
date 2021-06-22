@@ -8,8 +8,8 @@ public class PlayerSpecialState : State<Player> {
     }
 
     public override void LogicUpdate(Player player) {
-        if (player.velocity.y < 0f && player.ActiveController == "hammond override") {
-            player.RB.AddForce(Vector2.down*2f, ForceMode2D.Impulse);
+        if (player.velocity.y < 0f && player.activeController == Player.AnimationControllerType.Hammond) {
+            player.RB.AddForce(Vector2.down*2.5f, ForceMode2D.Impulse);
         }
     }
 

@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208259306}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -9.150001, z: 0}
+  m_LocalPosition: {x: 0, y: -1.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1886796771}
@@ -597,7 +597,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508226346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.29, y: 10.27, z: -10}
+  m_LocalPosition: {x: -5.29, y: 2.35, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 208259307}
@@ -10801,9 +10801,73 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3491749786119672749, guid: ce52596b91723d04e85c332d0b21e3bc, type: 3}
+      propertyPath: activeController
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491749786119672749, guid: ce52596b91723d04e85c332d0b21e3bc, type: 3}
       propertyPath: interactionLogic
       value: 
       objectReference: {fileID: 11400000, guid: e92eb679f1d1b0a48ab978543cdef7b6, type: 2}
+    - target: {fileID: 3491749786119672749, guid: ce52596b91723d04e85c332d0b21e3bc, type: 3}
+      propertyPath: AnimControllers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491749786119672749, guid: ce52596b91723d04e85c332d0b21e3bc, type: 3}
+      propertyPath: AnimControllers.Array.data[1].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491749786119672749, guid: ce52596b91723d04e85c332d0b21e3bc, type: 3}
+      propertyPath: AnimControllers.Array.data[2].type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491749786119672749, guid: ce52596b91723d04e85c332d0b21e3bc, type: 3}
+      propertyPath: AnimControllers.Array.data[3].type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491749786119672749, guid: ce52596b91723d04e85c332d0b21e3bc, type: 3}
+      propertyPath: animationControllers.Array.data[0].type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491749786119672749, guid: ce52596b91723d04e85c332d0b21e3bc, type: 3}
+      propertyPath: animationControllers.Array.data[1].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491749786119672749, guid: ce52596b91723d04e85c332d0b21e3bc, type: 3}
+      propertyPath: animationControllers.Array.data[3].type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491749786119672749, guid: ce52596b91723d04e85c332d0b21e3bc, type: 3}
+      propertyPath: AnimControllers.Array.data[0].controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3aa67a0e132edb648893223317f6dfc9, type: 2}
+    - target: {fileID: 3491749786119672749, guid: ce52596b91723d04e85c332d0b21e3bc, type: 3}
+      propertyPath: AnimControllers.Array.data[1].controller
+      value: 
+      objectReference: {fileID: 22100000, guid: b3a97c6fee6b9514ca6b47419fa73978, type: 2}
+    - target: {fileID: 3491749786119672749, guid: ce52596b91723d04e85c332d0b21e3bc, type: 3}
+      propertyPath: AnimControllers.Array.data[2].controller
+      value: 
+      objectReference: {fileID: 22100000, guid: b2aeaed920fe9644f99354b5dbb88da9, type: 2}
+    - target: {fileID: 3491749786119672749, guid: ce52596b91723d04e85c332d0b21e3bc, type: 3}
+      propertyPath: AnimControllers.Array.data[3].controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 5a036de6b0202214b915f1b896ef6d40, type: 2}
+    - target: {fileID: 3491749786119672749, guid: ce52596b91723d04e85c332d0b21e3bc, type: 3}
+      propertyPath: animationControllers.Array.data[0].controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3aa67a0e132edb648893223317f6dfc9, type: 2}
+    - target: {fileID: 3491749786119672749, guid: ce52596b91723d04e85c332d0b21e3bc, type: 3}
+      propertyPath: animationControllers.Array.data[1].controller
+      value: 
+      objectReference: {fileID: 22100000, guid: b3a97c6fee6b9514ca6b47419fa73978, type: 2}
+    - target: {fileID: 3491749786119672749, guid: ce52596b91723d04e85c332d0b21e3bc, type: 3}
+      propertyPath: animationControllers.Array.data[2].controller
+      value: 
+      objectReference: {fileID: 22100000, guid: b2aeaed920fe9644f99354b5dbb88da9, type: 2}
+    - target: {fileID: 3491749786119672749, guid: ce52596b91723d04e85c332d0b21e3bc, type: 3}
+      propertyPath: animationControllers.Array.data[3].controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 5a036de6b0202214b915f1b896ef6d40, type: 2}
     - target: {fileID: 3491749786119672750, guid: ce52596b91723d04e85c332d0b21e3bc, type: 3}
       propertyPath: m_Name
       value: Player

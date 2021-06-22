@@ -60,16 +60,16 @@ public class Hammond : MonoBehaviour, IDamageable {
         transform.Rotate(0f, -180f, 0f);
     }
 
-    public int TakeDamage(float damage) {
+    public Player.AnimationControllerType TakeDamage(float damage) {
         if (health > 0f) {
             health -= damage;
             // isTakingDamage = true;
             Debug.Log("current health: " + health);
-            return -1;
+            return Player.AnimationControllerType.Default;
         }
         else {
             Destroy(gameObject, 0.1f);
-            return 2; // hammond is 2 index for animation override controller in Player class
+            return Player.AnimationControllerType.Hammond;
         }
     }
 

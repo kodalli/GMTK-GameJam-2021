@@ -64,7 +64,7 @@ public class InteractionLogic : ScriptableObject {
     }
 
     private void CheckForSpecialInteraction(Player player) {
-        if (player.ActiveController == "bubbo_controller") return;
+        if (player.activeController == Player.AnimationControllerType.Default) return;
         if (interactionData.IsEmpty() || !playerInputData.isUsingSpecial ||
             !interactionData.Interactable.IsInteractable) return;
         if (!interactionData.Interactable.IsSpecialInteraction) return;
