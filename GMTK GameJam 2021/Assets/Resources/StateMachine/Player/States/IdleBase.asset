@@ -21,9 +21,6 @@ MonoBehaviour:
   - decision: {fileID: 11400000, guid: 72600b6c3a59242449ff3d97b993bf08, type: 2}
     trueState: {fileID: 11400000, guid: 45d00b560014c834284d350959159e3d, type: 2}
     falseState: {fileID: 11400000, guid: 9312ca6d4f308d84db735abe451889ef, type: 2}
-  - decision: {fileID: 11400000, guid: 6585dd0ab1f13a345b208aa8b9cb86e9, type: 2}
-    trueState: {fileID: 11400000, guid: 3c527586c62d26a41b1183987f19b9a1, type: 2}
-    falseState: {fileID: 11400000, guid: 9312ca6d4f308d84db735abe451889ef, type: 2}
   - decision: {fileID: 11400000, guid: 7f798d5ed57c7394c856aa1678af743c, type: 2}
     trueState: {fileID: 11400000, guid: 9312ca6d4f308d84db735abe451889ef, type: 2}
     falseState: {fileID: 11400000, guid: 3c527586c62d26a41b1183987f19b9a1, type: 2}
@@ -35,6 +32,9 @@ MonoBehaviour:
     falseState: {fileID: 11400000, guid: 9312ca6d4f308d84db735abe451889ef, type: 2}
   - decision: {fileID: 11400000, guid: aff0fe957c8bdb84fb0983048fb5cfd9, type: 2}
     trueState: {fileID: 11400000, guid: 998f63802650a9742be5e223f692a359, type: 2}
+    falseState: {fileID: 11400000, guid: 9312ca6d4f308d84db735abe451889ef, type: 2}
+  - decision: {fileID: 11400000, guid: 6585dd0ab1f13a345b208aa8b9cb86e9, type: 2}
+    trueState: {fileID: 11400000, guid: 3c527586c62d26a41b1183987f19b9a1, type: 2}
     falseState: {fileID: 11400000, guid: 9312ca6d4f308d84db735abe451889ef, type: 2}
   playerData: {fileID: 11400000, guid: 9c326f3570916f849b1e24c7656ff1ad, type: 2}
   animBoolName:

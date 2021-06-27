@@ -21,6 +21,7 @@ public class PlayerData : ScriptableObject {
     public bool damaged;
     public float rayDistance = 4f;
     public LayerMask interactableLayer;
+    public float velocityY;
 
     public void Reset() {
         damaged = false;

@@ -64,6 +64,7 @@ public class Player : PlayerPhysics {
         currentBaseState.OnStateUpdate(this);
         interactionLogic.UpdateInteractable(this, collider.bounds.center);
         playerData.activeController = activeController;
+        playerData.velocityY = RB.velocity.y;
     }
 
     private void TransitionToState(PlayerBaseState nextBaseState) {

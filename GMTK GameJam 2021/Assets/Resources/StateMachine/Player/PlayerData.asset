@@ -16,9 +16,9 @@ MonoBehaviour:
   currentHealth: 50
   currentScore: 100
   isAnimationFinished: 0
-  activeController: 
+  activeController: 2
   movementSpeed: 10
-  jumpSpeed: 30
+  jumpSpeed: 18
   facingDirection: 1
   attackDamage: 25
   damaged: 0

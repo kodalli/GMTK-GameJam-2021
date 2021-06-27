@@ -19,8 +19,23 @@ public class InteractionLogic : ScriptableObject {
     private void CheckForInteractable(Player player, Vector3 center) {
         var hitSomething = Helper.Raycast(center,
             player.transform.right, playerData.rayDistance, playerData.interactableLayer, out var ray);
+        var hitSomethingDown = Helper.Raycast(center,
+            player.transform.up * -1, playerData.rayDistance, playerData.interactableLayer, out var rayDown);
         if (hitSomething) {
             interactable = ray.transform.GetComponent<InteractableBase>();
+            if (interactable != null) {
+                if (interactionData.IsEmpty()) {
+                    interactionData.Interactable = interactable;
+                }
+                else {
+                    if (!interactionData.IsSameInteractable(interactable)) {
+                        interactionData.Interactable = interactable;
+                    }
+                }
+            }
+        }
+        else if (hitSomethingDown) {
+            interactable = rayDown.transform.GetComponent<InteractableBase>();
             if (interactable != null) {
                 if (interactionData.IsEmpty()) {
                     interactionData.Interactable = interactable;
@@ -39,6 +54,8 @@ public class InteractionLogic : ScriptableObject {
 
         Debug.DrawRay(center, player.transform.right * playerData.rayDistance,
             hitSomething ? Color.green : Color.red);
+        Debug.DrawRay(center, player.transform.up * (-1 * playerData.rayDistance),
+            hitSomethingDown ? Color.green : Color.red);
     }
 
     private void CheckForInteractableInput(Player player) {
