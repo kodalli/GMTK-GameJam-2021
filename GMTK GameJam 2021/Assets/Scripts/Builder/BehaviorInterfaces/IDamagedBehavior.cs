@@ -1,5 +1,5 @@
 ﻿namespace Builder.BehaviorInterfaces {
     public interface IDamagedBehavior {
-        void Damaged();
+        void Damaged(NPC npc);
     }
 }

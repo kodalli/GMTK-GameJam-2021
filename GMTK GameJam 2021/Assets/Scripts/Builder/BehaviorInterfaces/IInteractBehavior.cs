@@ -1,5 +1,5 @@
 ﻿namespace Builder.BehaviorInterfaces {
     public interface IInteractBehavior {
-        void Interact();
+        void Interact(NPC npc);
     }
 }

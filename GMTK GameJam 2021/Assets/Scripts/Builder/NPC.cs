@@ -1,4 +1,5 @@
 ﻿using Builder.BehaviorInterfaces;
+using UnityEngine;
 
 namespace Builder {
     public class NPC {
@@ -6,42 +7,52 @@ namespace Builder {
         private readonly IMovementBehavior movementBehavior;
         private readonly IInteractBehavior interactBehavior;
         private readonly IDamagedBehavior damagedBehavior;
+        private readonly Rigidbody2D rigidbody2D;
+        private readonly BoxCollider2D collider2D;
+        public Rigidbody2D RB => rigidbody2D;
+        public BoxCollider2D Collider => collider2D;
 
         private NPC(IBuilder builder) {
             attackBehavior = builder.GetAttackBehavior();
             movementBehavior = builder.GetMovementBehavior();
             interactBehavior = builder.GetInteractBehavior();
             damagedBehavior = builder.GetDamagedBehavior();
+            rigidbody2D = builder.GetRigidBody2D();
+            collider2D = builder.GetBoxCollider2D();
         }
 
         public void Attack() {
-            attackBehavior.Attack();
+            attackBehavior.Attack(this);
         }
 
         public void Move() {
-            movementBehavior.Move();
+            movementBehavior.Move(this);
         }
 
         public void Interact() {
-            interactBehavior.Interact();
+            interactBehavior.Interact(this);
         }
 
         public void Damaged() {
-            damagedBehavior.Damaged();
+            damagedBehavior.Damaged(this);
         }
 
-        public interface IBuilder {
+        private interface IBuilder {
             IAttackBehavior GetAttackBehavior();
             IDamagedBehavior GetDamagedBehavior();
             IInteractBehavior GetInteractBehavior();
             IMovementBehavior GetMovementBehavior();
-        } 
-        
+            Rigidbody2D GetRigidBody2D();
+            BoxCollider2D GetBoxCollider2D();
+        }
+
         public sealed class Builder : IBuilder {
             private IAttackBehavior attackBehavior;
             private IDamagedBehavior damagedBehavior;
             private IInteractBehavior interactBehavior;
             private IMovementBehavior movementBehavior;
+            private Rigidbody2D rigidbody2D;
+            private BoxCollider2D collider2D;
 
             public Builder WithAttackBehavior(IAttackBehavior ab) {
                 this.attackBehavior = ab;
@@ -63,6 +74,16 @@ namespace Builder {
                 return this;
             }
 
+            public Builder WithRigidBody2D(GameObject character) {
+                rigidbody2D = character.AddComponent<Rigidbody2D>();
+                return this;
+            }
+
+            public Builder WithBoxCollider2D(GameObject go) {
+                collider2D = go.AddComponent<BoxCollider2D>();
+                return this;
+            }
+
             public NPC Build() {
                 return new NPC(this);
             }
@@ -81,6 +102,14 @@ namespace Builder {
 
             public IMovementBehavior GetMovementBehavior() {
                 return movementBehavior;
+            }
+
+            public Rigidbody2D GetRigidBody2D() {
+                return rigidbody2D;
+            }
+
+            public BoxCollider2D GetBoxCollider2D() {
+                return collider2D;
             }
         }
     }

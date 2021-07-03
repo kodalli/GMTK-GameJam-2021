@@ -1,5 +1,5 @@
 ﻿namespace Builder.BehaviorInterfaces {
     public interface IMovementBehavior {
-        void Move();
+        void Move(NPC npc);
     }
 }

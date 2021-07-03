@@ -2,8 +2,8 @@
 
 namespace Builder.ConcreteBehaviors {
     public class AggressiveMovementBehavior : IMovementBehavior {
-        public void Move() {
-            throw new System.NotImplementedException();
+        public void Move(NPC npc) {
+            return;
         }
     }
 }

@@ -203,6 +203,10 @@ public static class Helper {
                 throw new ArgumentOutOfRangeException(nameof(color), color, null);
         }
     }
+    
+    public static string CustomLog(this string text, Color colour) {
+        return $"<color=#{ColorUtility.ToHtmlStringRGB(colour)}>{text}</color>";
+    }
 
     #endregion
 }

@@ -2,7 +2,7 @@
 
 namespace Builder.ConcreteBehaviors {
     public class TalkativeInteractBehavior : IInteractBehavior{
-        public void Interact() {
+        public void Interact(NPC npc) {
             throw new System.NotImplementedException();
         }
     }

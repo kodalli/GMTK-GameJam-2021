@@ -1,11 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Builder;
+using Builder.BehaviorInterfaces;
+using Builder.ConcreteBehaviors;
 using UnityEngine;
 using UnityEngine.TextCore;
 
-public class Dridd : MonoBehaviour, IDamageable{
-    
+public class Dridd : MonoBehaviour, IDamageable {
     [Header("State Machine")]
     [SerializeField] private DriddBaseState currentState;
     [SerializeField] private DriddBaseState remainState;

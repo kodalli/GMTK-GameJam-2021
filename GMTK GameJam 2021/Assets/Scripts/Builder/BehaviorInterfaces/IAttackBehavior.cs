@@ -1,5 +1,5 @@
 ﻿namespace Builder.BehaviorInterfaces {
     public interface IAttackBehavior {
-        void Attack();
+        void Attack(NPC npc);
     }
 }

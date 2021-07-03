@@ -16,5 +16,14 @@ namespace Builder {
             bob.Move();
             return bob;
         }
+
+        public NPC BuildCockBoy() {
+            NPC cocker = new NPC.Builder()
+                .WithAttackBehavior(new CockAttackBehavior())
+                .Build();
+            
+            cocker.Attack();
+            return cocker;
+        }
     }
 }
