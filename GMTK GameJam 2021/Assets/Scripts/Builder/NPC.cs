@@ -21,21 +21,17 @@ namespace Builder {
             collider2D = builder.GetBoxCollider2D();
         }
 
-        public void Attack() {
-            attackBehavior.Attack(this);
-        }
+        #region Behaviors
 
-        public void Move() {
-            movementBehavior.Move(this);
-        }
+        public void Attack() => attackBehavior.Attack(this);
 
-        public void Interact() {
-            interactBehavior.Interact(this);
-        }
+        public void Move() => movementBehavior.Move(this);
 
-        public void Damaged() {
-            damagedBehavior.Damaged(this);
-        }
+        public void Interact() => interactBehavior.Interact(this);
+
+        public void Damaged() => damagedBehavior.Damaged(this);
+
+        #endregion
 
         private interface IBuilder {
             IAttackBehavior GetAttackBehavior();
@@ -53,6 +49,12 @@ namespace Builder {
             private IMovementBehavior movementBehavior;
             private Rigidbody2D rigidbody2D;
             private BoxCollider2D collider2D;
+
+            public NPC Build() {
+                return new NPC(this);
+            }
+
+            #region Behavior Setters
 
             public Builder WithAttackBehavior(IAttackBehavior ab) {
                 this.attackBehavior = ab;
@@ -74,8 +76,8 @@ namespace Builder {
                 return this;
             }
 
-            public Builder WithRigidBody2D(GameObject character) {
-                rigidbody2D = character.AddComponent<Rigidbody2D>();
+            public Builder WithRigidBody2D(GameObject go) {
+                rigidbody2D = go.AddComponent<Rigidbody2D>();
                 return this;
             }
 
@@ -84,9 +86,9 @@ namespace Builder {
                 return this;
             }
 
-            public NPC Build() {
-                return new NPC(this);
-            }
+            #endregion
+
+            #region Behavior Getters
 
             public IAttackBehavior GetAttackBehavior() {
                 return attackBehavior;
@@ -111,6 +113,8 @@ namespace Builder {
             public BoxCollider2D GetBoxCollider2D() {
                 return collider2D;
             }
+
+            #endregion
         }
     }
 }
