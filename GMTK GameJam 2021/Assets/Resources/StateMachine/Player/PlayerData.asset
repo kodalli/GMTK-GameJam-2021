@@ -16,7 +16,7 @@ MonoBehaviour:
   currentHealth: 50
   currentScore: 100
   isAnimationFinished: 0
-  activeController: 2
+  activeController: 0
   movementSpeed: 10
   jumpSpeed: 18
   facingDirection: 1
@@ -26,3 +26,4 @@ MonoBehaviour:
   interactableLayer:
     serializedVersion: 2
     m_Bits: 128
+  velocityY: 0
