@@ -6,8 +6,8 @@ using UnityEngine;
 // using TMPro;
 using System.Linq;
 // using UnityEngine.EventSystems;
-using UnityEditor;
-using UnityEditor.Animations;
+// using UnityEditor;
+// using UnityEditor.Animations;
 
 
 public enum LogColor {
@@ -76,23 +76,23 @@ public static class Helper {
 
     #region Animator Extensions
 
-    /// <summary>
-    /// Returns all the state names from an animator as a string array.
-    /// </summary>
-    /// <example>
-    /// This sample shows how to call the <see cref="GetStateNames"/> method.
-    /// <code>
-    /// Animator anim;
-    /// AnimatorState[] myStateNames = GetStateNames(anim);
-    /// string stateName = myStateNames[0];
-    /// </code>
-    /// </example>
-    public static AnimatorState[] GetStateNames(Animator animator) {
-        var controller = animator ? animator.runtimeAnimatorController as AnimatorController : null;
-        return controller == null
-            ? null
-            : controller.layers.SelectMany(l => l.stateMachine.states).Select(s => s.state).ToArray();
-    }
+    // /// <summary>
+    // /// Returns all the state names from an animator as a string array.
+    // /// </summary>
+    // /// <example>
+    // /// This sample shows how to call the <see cref="GetStateNames"/> method.
+    // /// <code>
+    // /// Animator anim;
+    // /// AnimatorState[] myStateNames = GetStateNames(anim);
+    // /// string stateName = myStateNames[0];
+    // /// </code>
+    // /// </example>
+    // public static AnimatorState[] GetStateNames(Animator animator) {
+    //     var controller = animator ? animator.runtimeAnimatorController as AnimatorController : null;
+    //     return controller == null
+    //         ? null
+    //         : controller.layers.SelectMany(l => l.stateMachine.states).Select(s => s.state).ToArray();
+    // }
 
 
     /// <summary>
